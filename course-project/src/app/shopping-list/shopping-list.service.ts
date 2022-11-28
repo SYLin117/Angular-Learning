@@ -9,6 +9,7 @@ export class ShoppingListService {
 
   // ingredientsChanged = new EventEmitter<Ingredient[]>();
   ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
 
 
   private ingredients: Ingredient[] = [
@@ -34,5 +35,19 @@ export class ShoppingListService {
     // this.ingredientsChanged.emit(this.ingredients.slice())
     this.ingredientsChanged.next(this.ingredients.slice())
     console.log('slService ingredients:' + JSON.stringify(this.ingredients))
+  }
+
+  updateIngredient(index:number, newIngredient: Ingredient){
+    this.ingredients[index] = newIngredient
+    this.ingredientsChanged.next(this.ingredients.slice())
+  }
+
+  deleteIngredient(index: number){
+    this.ingredients.splice(index, 1)
+    this.ingredientsChanged.next(this.ingredients.slice())
+  }
+
+  getIngredient(index: number){
+    return this.ingredients[index]
   }
 }
