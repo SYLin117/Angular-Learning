@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "forms-reactive-start"
+		},
+		{
+			"path": "course-project"
+		},
+		{
+			"path": "forms-reactive-final"
+		},
+		{
+			"path": "prj-forms-final"
+		}
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"editor.fontSize": 15,
+		"workbench.colorTheme": "Default High Contrast"
+	}
+}
