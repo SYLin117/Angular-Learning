@@ -135,3 +135,5 @@ dist
 */e2e/*
 */.editorconfig/
 .editorconfig
+
+*.code-workspace
