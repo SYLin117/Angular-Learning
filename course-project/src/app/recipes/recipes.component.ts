@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 
 import { Recipe } from './recipe.model';
 import { RecipeService } from './recipe.service';
@@ -13,12 +14,13 @@ export class RecipesComponent implements OnInit {
   // we remove it because using routing
   // selectedRecipe: Recipe;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
     // this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
     //   this.selectedRecipe = recipe
     // })
+    // this.dataStorageService.fetchRecipes()
   }
 
 }

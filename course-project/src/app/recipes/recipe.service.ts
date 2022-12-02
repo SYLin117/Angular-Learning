@@ -13,23 +13,29 @@ export class RecipeService {
   // recipeSelected = new Subject<Recipe>();
   recipesChanged = new Subject<Recipe[]>;
 
-  private recipes: Recipe[] = [
-    new Recipe('A Test Recipe',
-      'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('French Fries', 10)
-      ]),
-    new Recipe('Burger',
-      'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
-      [
-        new Ingredient('Buns', 1),
-        new Ingredient('Meat', 10)
-      ]),
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe('A Test Recipe',
+  //     'This is simply a test',
+  //     'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+  //     [
+  //       new Ingredient('Meat', 1),
+  //       new Ingredient('French Fries', 10)
+  //     ]),
+  //   new Recipe('Burger',
+  //     'This is simply a test',
+  //     'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+  //     [
+  //       new Ingredient('Buns', 1),
+  //       new Ingredient('Meat', 10)
+  //     ]),
+  // ];
+  private recipes: Recipe[] = []
   constructor(private slService: ShoppingListService) { }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes
+    this.recipesChanged.next(this.recipes.slice())
+  }
 
   getRecipes() {
     return this.recipes.slice()
@@ -43,17 +49,17 @@ export class RecipeService {
     this.slService.addIngredients(ingredients)
   }
 
-  addRecipe(recipe: Recipe){
+  addRecipe(recipe: Recipe) {
     this.recipes.push(recipe)
     this.recipesChanged.next(this.recipes.slice())
   }
 
-  updateRecipe(index: number, recipe: Recipe){
+  updateRecipe(index: number, recipe: Recipe) {
     this.recipes[index] = recipe
     this.recipesChanged.next(this.recipes.slice())
   }
 
-  deleteRecipe(index: number){
+  deleteRecipe(index: number) {
     this.recipes.splice(index, 1)
     this.recipesChanged.next(this.recipes.slice())
   }
