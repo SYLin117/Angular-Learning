@@ -21,6 +21,8 @@ import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
     LoadingComponent,
+    AlertComponent,
+    DropdownDirective,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,6 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     ShoppingListService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
