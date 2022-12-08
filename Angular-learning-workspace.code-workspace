@@ -11,11 +11,29 @@
 		},
 		{
 			"path": "prj-forms-final"
+		},
+		{
+			"path": "pipes-start"
+		},
+		{
+			"path": "obs-01-start"
+		},
+		{
+			"path": "pipes-assignment-start"
+		},
+		{
+			"path": "http-01-start"
+		},
+		{
+			"path": "auth-01-auth-component"
+		},
+		{
+			"path": "forms-td-start"
 		}
 	],
 	"settings": {
 		"files.autoSave": "afterDelay",
 		"editor.fontSize": 15,
-		"workbench.colorTheme": "Default High Contrast"
+		"workbench.colorTheme": "Visual Studio Dark"
 	}
 }
